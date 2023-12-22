@@ -2,13 +2,15 @@ import pic from "../assets/Free Macbook Pro and iPhone Mockup.png"
 
 const Banner = () => {
     return (
-        <div className="min-h-screen flex items-center justify-between">
+        <div className="min-h-screen lg:flex items-center gap-20 justify-center
+        bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-tmred  to-tmnavy
+        ">
             <div className="max-w-lg">
-                <h1 className="text-5xl font-bold">Box Office News!</h1>
-                <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                <button className="btn btn-primary bg-tmred border-0 text-tmwhite">Get Started</button>
+                <h1 className="text-3xl md:text-5xl font-bold pt-16 lg:pt-0 text-tmwhite">Organize your tasks effectively</h1>
+                <p className="py-6 text-tmwhite">Free, simple and easy task manager</p>
+                <button className="btn btn-primary bg-tmred border-0 text-tmwhite">Let&apos;s explore</button>
             </div>
-            <div>
+            <div className="max-w-lg">
                 <img src={pic} alt="" />
             </div>
 
