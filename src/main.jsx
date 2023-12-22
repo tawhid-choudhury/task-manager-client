@@ -10,6 +10,10 @@ import MainLayout from "./layout/MainLayout";
 import AuthProvider from "./providers/AuthProvider";
 import SignupPage from "./components/SignupPage";
 import LoginPage from "./components/LoginPage";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import Dashboard from "./layout/Dashboard";
+import Add from "./components/Add";
+import DashboardHome from "./components/DashboardHome";
 
 const router = createBrowserRouter([
   {
@@ -21,10 +25,6 @@ const router = createBrowserRouter([
         element: <HomePage />
       },
       {
-        path: "/dashboard",
-        element: <h1>dsah</h1>
-      },
-      {
         path: "/login",
         element: <LoginPage />
       },
@@ -32,6 +32,20 @@ const router = createBrowserRouter([
         path: "/signup",
         element: <SignupPage />
       },
+    ]
+  },
+  {
+    path: "dashboard",
+    element: <PrivateRoute><Dashboard /></PrivateRoute>,
+    children: [
+      {
+        path: "dashboardhome",
+        element: <DashboardHome />
+      },
+      {
+        path: "add",
+        element: <Add />
+      }
     ]
   },
 ]);
