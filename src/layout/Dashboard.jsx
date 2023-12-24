@@ -4,9 +4,9 @@ import { NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
     return (
-        <div className="flex">
+        <div className="flex flex-col lg:flex-row justify-center items-center">
             {/* dashboard side bar */}
-            <div className="w-64 min-h-screen bg-tmred text-tmwhite">
+            <div className=" lg:w-64 lg:mx-0 lg:mt-0 lg:min-h-screen rounded-md bg-tmred text-tmwhite">
                 <ul className="menu p-4">
                     <li>
                         <NavLink to="/dashboard/dashboardhome">
