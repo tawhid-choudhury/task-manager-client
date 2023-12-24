@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
 import { useQuery } from '@tanstack/react-query';
 import axiosPublic from '../api';
@@ -18,7 +18,6 @@ const UpdateTask = () => {
         queryKey: ['tasks', user.email],
         queryFn: () => axiosPublic.get(`/taskdetails/${id}`).then((res) => res.data),
     });
-    const [deadline, setDeadline] = useState(task?.deadline);
 
     if (isTaskFetching) return 'Loading...';
 
@@ -42,7 +41,7 @@ const UpdateTask = () => {
             swal("Warning", "select status please", "warning")
             return;
         }
-
+        const deadline = form.deadline.value;
         if (!deadline) {
             swal("Warning", "select deadline please", "warning")
             return;
@@ -66,7 +65,7 @@ const UpdateTask = () => {
     return (
         <div>
             <div><Toaster /></div>
-            <div className="modal-box">
+            <div className="">
                 <h3 className="font-bold text-lg">Update Task</h3>
                 <div className=" w-full justify-center">
                     <form onSubmit={handleUpdate}>
@@ -110,7 +109,7 @@ const UpdateTask = () => {
                             <label className="label">
                                 <span className="label-text">Type</span>
                             </label>
-                            <input type="date" onChange={(e) => setDeadline(e.target.value)} name="type" className="input input-bordered w-full" defaultValue={task?.deadline || ""} />
+                            <input type="date" name="deadline" className="input input-bordered w-full" defaultValue={task.deadline} />
                         </div>
                         <input type='submit' className='btn w-full my-5 bg-tmnavy text-tmwhite' value={"Update"} />
                     </form>

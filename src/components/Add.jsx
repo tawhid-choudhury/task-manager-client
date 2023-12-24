@@ -41,7 +41,7 @@ const Add = () => {
     }
 
     return (
-        <div className="flex flex-col justify-center items-center h-screen">
+        <div className="flex flex-col justify-center items-center">
             <div><Toaster /></div>
             <form className="w-full max-w-7xl" onSubmit={handleAdd}>
                 <div>

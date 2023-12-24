@@ -21,7 +21,7 @@ const LoginPage = () => {
             .then((uc) => {
                 console.log(uc);
                 swal("Complete!", "Logged in!", "success");
-                nav(location?.state ? location.state : "/")
+                nav(location?.state ? location.state : "/dashboard/dashboardhome")
             }).catch((err) => {
                 if (err.code === "auth/invalid-login-credentials") {
                     swal("Error!", "Invalid login credentials", "error");
@@ -39,7 +39,7 @@ const LoginPage = () => {
             .then((uc) => {
                 console.log(uc);
                 swal("Complete!", "Logged in!", "success");
-                nav(location?.state ? location.state : "/")
+                nav(location?.state ? location.state : "/dashboard/dashboardhome")
             }).catch((err) => {
                 if (err.code === "auth/email-already-in-use") {
                     swal("Error!", "Email is already in use. Please choose a different email.", "error");
@@ -58,7 +58,7 @@ const LoginPage = () => {
                 <div className="hero min-h-screen bg-base-200">
                     <div className="hero-content flex-col lg:flex-row-reverse">
                         <div className="text-center lg:text-left">
-                            <h1 className="text-5xl font-bold">Login now!</h1>
+                            <h1 className="text-5xl font-bold mt-20">Login now!</h1>
                             <p className="py-6">Unlock the future of secure online access with us. Join our community and experience seamless authentication. Your digital journey begins here.</p>
                         </div>
 
