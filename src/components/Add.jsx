@@ -37,18 +37,6 @@ const Add = () => {
         if (res.data?.insertedId) {
             toast.success('Successfully added!')
         }
-        // fetch('https://assignment-10-api.vercel.app/products', {
-        //     method: "POST",
-        //     headers: { "content-type": "application/json" },
-        //     body: JSON.stringify(newProduct)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //         swal("Complete!", `ADDED ${name}!`, "success")
-        //     }).catch((err) => {
-        //         swal("Error:", `${err}`, "error");
-        //     })
 
     }
 
